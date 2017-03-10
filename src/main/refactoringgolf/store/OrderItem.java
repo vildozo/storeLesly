@@ -28,7 +28,7 @@ public class OrderItem {
 	private float calculateDiscount() {
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
 			AccessoriesDiscount accessoriesDiscount = new AccessoriesDiscount();
-			return calculateAccessoriesDiscount();	
+			return calculateAccessoriesDiscount(accessoriesDiscount);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {
 			return calculateBikeDiscount();	
@@ -51,7 +51,7 @@ public class OrderItem {
 		return itemAmount() * 20 / 100;
 	}
 
-	private float calculateAccessoriesDiscount() {
+	private float calculateAccessoriesDiscount(AccessoriesDiscount accessoriesDiscount) {
 		float booksDiscount = 0;
 		if (itemAmount() >= 100) {
 			booksDiscount = itemAmount() * 10 / 100;

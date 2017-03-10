@@ -1,6 +1,6 @@
 package refactoringgolf.store;
 
-public class AccessoriesDiscount {
+public class AccessoriesDiscount implements Discount {
 
 	float calculateDiscount(OrderItem orderItem) {
 		float booksDiscount = 0;

@@ -23,19 +23,21 @@ public class OrderItem {
 
 	float totalItem() {
 		float totalItem=0;
-		float discount=0;
+		totalItem = itemAmount() - calculateDiscount();
+		return totalItem;
+	}
+
+	private float calculateDiscount() {
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
-			discount = calculateAccessoriesDiscount();	
+			return calculateAccessoriesDiscount();	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {
-			discount = calculateBikeDiscount();	
+			return calculateBikeDiscount();	
 		}
 		if (getProduct().getCategory() == ProductCategory.Cloathing) {
-			discount = calculateCloathingDiscount();
-			
+			return  calculateCloathingDiscount();
 		}
-		totalItem = itemAmount() - discount;
-		return totalItem;
+		return 0;
 	}
 
 	private float calculateCloathingDiscount() {

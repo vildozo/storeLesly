@@ -27,16 +27,19 @@ public class OrderItem {
 
 	private float calculateDiscount() {
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
-			Discount accessoriesDiscount = new AccessoriesDiscount();
-			return accessoriesDiscount.calculateDiscount(this);	
+			Discount productDiscount;
+			productDiscount = new AccessoriesDiscount();
+			return productDiscount.calculateDiscount(this);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {
-			Discount bikeDiscount = new BikeDiscount();
-			return bikeDiscount.calculateDiscount(this);	
+			Discount productDiscount;
+			productDiscount = new BikeDiscount();
+			return productDiscount.calculateDiscount(this);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Cloathing) {
-			Discount cloathingDiscount = new CloathingDiscount();
-			return  cloathingDiscount.calculateDiscount(this);
+			Discount productDiscount;
+			productDiscount = new CloathingDiscount();
+			return  productDiscount.calculateDiscount(this);
 		}
 		return 0;
 	}

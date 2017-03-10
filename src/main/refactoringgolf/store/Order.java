@@ -80,8 +80,13 @@ public class Order {
 
 		int delivery=delivery();
 
-		// total=totalItemst + tax + 15 shipping
-		return totalItems + totalItems * 5 / 100 + delivery;
+		
+		float tax = tax(totalItems);
+		return totalItems + tax + delivery;
+	}
+
+	private float tax(float totalItems) {
+		return totalItems * 5 / 100;
 	}
 
 	private int delivery() {

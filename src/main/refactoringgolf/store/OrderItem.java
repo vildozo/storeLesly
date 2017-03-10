@@ -22,13 +22,12 @@ public class OrderItem {
 	}
 
 	float totalItem() {
-		float totalItem=0;
-		totalItem = itemAmount() - calculateDiscount();
-		return totalItem;
+		return itemAmount() - calculateDiscount();
 	}
 
 	private float calculateDiscount() {
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
+			AccessoriesDiscount accessoriesDiscount = new AccessoriesDiscount();
 			return calculateAccessoriesDiscount();	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {

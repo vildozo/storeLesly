@@ -25,18 +25,13 @@ public class OrderItem {
 		float totalItem=0;
 		float discount=0;
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
-			float booksDiscount = calculateAccessoriesDiscount();
-			discount = booksDiscount;
-			
+			discount = calculateAccessoriesDiscount();	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {
-			// 20% discount for Bikes
-			discount = calculateBikeDiscount();
-			
+			discount = calculateBikeDiscount();	
 		}
 		if (getProduct().getCategory() == ProductCategory.Cloathing) {
-			float cloathingDiscount = calculateCloathingDiscount();
-			discount = cloathingDiscount;
+			discount = calculateCloathingDiscount();
 			
 		}
 		totalItem = itemAmount() - discount;

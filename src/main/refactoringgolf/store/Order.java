@@ -78,12 +78,17 @@ public class Order {
 			totalItems += totalItem;
 		}
 
-		if (this.deliveryCountry == "USA"){
-			// total=totalItems + tax + 0 shipping
-			return totalItems + totalItems * 5 / 100;
-		}
+		int delivery=delivery();
 
 		// total=totalItemst + tax + 15 shipping
-		return totalItems + totalItems * 5 / 100 + 15;
+		return totalItems + totalItems * 5 / 100 + delivery;
 	}
+
+	private int delivery() {
+		if (this.deliveryCountry == "USA"){
+			return 0;
+		}
+		return 15;
+		}
+	
 }

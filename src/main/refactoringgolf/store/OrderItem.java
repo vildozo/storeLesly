@@ -27,15 +27,15 @@ public class OrderItem {
 
 	private float calculateDiscount() {
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
-			AccessoriesDiscount accessoriesDiscount = new AccessoriesDiscount();
+			Discount accessoriesDiscount = new AccessoriesDiscount();
 			return accessoriesDiscount.calculateDiscount(this);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {
-			BikeDiscount bikeDiscount = new BikeDiscount();
+			Discount bikeDiscount = new BikeDiscount();
 			return bikeDiscount.calculateDiscount(this);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Cloathing) {
-			CloathingDiscount cloathingDiscount = new CloathingDiscount();
+			Discount cloathingDiscount = new CloathingDiscount();
 			return  cloathingDiscount.calculateDiscount(this);
 		}
 		return 0;

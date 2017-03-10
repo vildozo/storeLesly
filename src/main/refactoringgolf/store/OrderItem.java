@@ -27,16 +27,12 @@ public class OrderItem {
 
 	private float calculateDiscount() {
 		Discount productDiscount=null;
-		if (getProduct().getCategory() == ProductCategory.Accessories) {
+		if (getProduct().getCategory() == ProductCategory.Accessories) 
 			productDiscount = new AccessoriesDiscount();
-		}
-		if (getProduct().getCategory() == ProductCategory.Bikes) {
+		if (getProduct().getCategory() == ProductCategory.Bikes) 
 			productDiscount = new BikeDiscount();
-		}
-		if (getProduct().getCategory() == ProductCategory.Cloathing) {
+		if (getProduct().getCategory() == ProductCategory.Cloathing) 
 			productDiscount = new CloathingDiscount();
-			
-		}
 		return  productDiscount.calculateDiscount(this);
 	}
 

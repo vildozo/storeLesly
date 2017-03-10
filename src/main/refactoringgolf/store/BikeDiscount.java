@@ -1,8 +1,8 @@
 package refactoringgolf.store;
 
-public class BikeDiscount {
+public class BikeDiscount implements Discount{
 
-	float calculateDiscount(OrderItem orderItem) {
+	public float calculateDiscount(OrderItem orderItem) {
 		return orderItem.itemAmount() * 20 / 100;
 	}
 

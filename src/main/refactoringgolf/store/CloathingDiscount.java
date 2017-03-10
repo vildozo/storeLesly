@@ -1,8 +1,8 @@
 package refactoringgolf.store;
 
-public class CloathingDiscount {
+public class CloathingDiscount implements Discount{
 
-	float calculateDiscount(OrderItem orderItem) {
+	public float calculateDiscount(OrderItem orderItem) {
 		float cloathingDiscounts = 0;
 		if (orderItem.getQuantity() > 2) {
 			cloathingDiscounts = orderItem.getProduct().getUnitPrice();

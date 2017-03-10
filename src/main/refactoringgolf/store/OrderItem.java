@@ -26,22 +26,18 @@ public class OrderItem {
 	}
 
 	private float calculateDiscount() {
+		Discount productDiscount=null;
 		if (getProduct().getCategory() == ProductCategory.Accessories) {
-			Discount productDiscount;
 			productDiscount = new AccessoriesDiscount();
-			return productDiscount.calculateDiscount(this);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Bikes) {
-			Discount productDiscount;
 			productDiscount = new BikeDiscount();
-			return productDiscount.calculateDiscount(this);	
 		}
 		if (getProduct().getCategory() == ProductCategory.Cloathing) {
-			Discount productDiscount;
 			productDiscount = new CloathingDiscount();
-			return  productDiscount.calculateDiscount(this);
+			
 		}
-		return 0;
+		return  productDiscount.calculateDiscount(this);
 	}
 
 	float itemAmount() {
